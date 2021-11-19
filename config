@@ -10,7 +10,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # Terminal Aliases
 alias l="ls -alFh"
-alias vz="vim ~/.zshrc"
+alias vz="vim ~/zsh-source-file/config"
 alias hist="cat ~/.zsh_history"
 
 # Jenkins in Docker Commands
@@ -25,7 +25,6 @@ alias di="docker images"
 alias dc="docker container"
 alias dv="docker volume"
 
-
 # Git Aliases
 alias gaa="git add ."
 alias ga="git add"
@@ -35,4 +34,8 @@ alias gch="git checkout"
 alias gp="git push -u origin"
 alias grv="git remote -v"
 alias gra="git remote add origin"
+alias gacp="gaa;gc update;gp"  
 alias grs="git remote set-url origin"
+
+# Terraform Aliases
+alias tf="terraform"
