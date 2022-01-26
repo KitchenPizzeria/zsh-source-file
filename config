@@ -1,3 +1,4 @@
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -11,12 +12,15 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # Terminal Aliases
 alias l="ls -alFh"
 alias vz="vim ~/zsh-source-file/config"
+alias cz="cat ~/zsh-source-file/config"
 alias hist="cat ~/.zsh_history"
-
+alias ports="lsof -nP +c 15 | grep LISTEN"
+alias cyp="npx cypress run"
+alias retro-tools="ssh -i "~/.ssh/Jenkins-Box-Key.pem" ec2-user@ec2-34-243-249-91.eu-west-1.compute.amazonaws.com"
 # Jenkins in Docker Commands
 alias jk-ssh="docker exec -it --user root 4f2d6d03d073 /bin/bash"
-alias jk="docker run -v /var/run/docker.sock:/var/run/docker.sock -dp 8080:8080 -p 50000:50000 -v jenkins_config:/var/jenkins_home 72d5c909f166"
 alias jk-webhook="relay forward --bucket jenkins http://localhost:8080/"
+alias mk="mkdir -p"
 
 # Docker Aliases
 alias dp="docker ps"
@@ -28,13 +32,14 @@ alias dv="docker volume"
 # Git Aliases
 alias gaa="git add ."
 alias ga="git add"
+alias gac="git add .;git commit -m"
 alias gb="git branch"
 alias gc="git commit -m"
 alias gch="git checkout"
 alias gp="git push -u origin"
 alias grv="git remote -v"
 alias gra="git remote add origin"
-alias gacp="gaa;gc update;gp"  
+alias gacp="gaa;gc update;gp -u origin"  
 alias grs="git remote set-url origin"
 
 # Terraform Aliases
